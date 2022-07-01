@@ -9,14 +9,14 @@ my-snowflake-db:
   outputs:
     dev:
       type: snowflake
-      account: an.us-east-1.privatelink
+      account: momentumcc.us-east-1
 
-      user: "{{ var('SNOWFLAKE_USERNAME', 'DEV_DBT_ETL') }}"
+      user: "{{ var('SNOWFLAKE_USERNAME', 'fivetran_vivek') }}"
       # Keypair config
       private_key_path: "{{ var('SNOWFLAKE_PRIVATE_KEY_PATH', '.keys/DEV_DBT_ETL.p8') }}" 
       private_key_passphrase: "{{ env_var('SNOWFLAKE_KEY_PASSPHRASE') }}"
 
-      database: "{{ var('SNOWFLAKE_DATABASE', 'DEV_AN_DW') }}"
+      database: "{{ var('SNOWFLAKE_DATABASE', 'FIVETRAN_SALESFORCE') }}"
       warehouse: "{{ var('SNOWFLAKE_WAREHOUSE', 'DEV_ETL_WH') }}"
       schema: DM
       threads: "{{ var('SNOWFLAKE_THREADS', 1) }}"
