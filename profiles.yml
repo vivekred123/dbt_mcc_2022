@@ -1,0 +1,24 @@
+config:
+  partial_parse: False
+  use_colors: True
+  printer_width: 120
+  send_anonymous_usage_stats: False
+
+my-snowflake-db:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: an.us-east-1.privatelink
+
+      user: "{{ var('SNOWFLAKE_USERNAME', 'DEV_DBT_ETL') }}"
+      # Keypair config
+      private_key_path: "{{ var('SNOWFLAKE_PRIVATE_KEY_PATH', '.keys/DEV_DBT_ETL.p8') }}" 
+      private_key_passphrase: "{{ env_var('SNOWFLAKE_KEY_PASSPHRASE') }}"
+
+      database: "{{ var('SNOWFLAKE_DATABASE', 'DEV_AN_DW') }}"
+      warehouse: "{{ var('SNOWFLAKE_WAREHOUSE', 'DEV_ETL_WH') }}"
+      schema: DM
+      threads: "{{ var('SNOWFLAKE_THREADS', 1) }}"
+      client_session_keep_alive: False
+
