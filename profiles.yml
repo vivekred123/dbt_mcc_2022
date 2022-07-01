@@ -13,7 +13,7 @@ my-snowflake-db:
 
       user: "{{ var('SNOWFLAKE_USERNAME', 'fivetran_vivek') }}"
       # Keypair config
-      private_key_path: "{{ var('SNOWFLAKE_PRIVATE_KEY_PATH', '.keys/DEV_DBT_ETL.p8') }}" 
+      private_key_path: "{{ var('SNOWFLAKE_PRIVATE_KEY_PATH', '.keys/fivetran_vivek.p8') }}" 
       private_key_passphrase: "{{ env_var('SNOWFLAKE_KEY_PASSPHRASE') }}"
 
       database: "{{ var('SNOWFLAKE_DATABASE', 'FIVETRAN_SALESFORCE') }}"
