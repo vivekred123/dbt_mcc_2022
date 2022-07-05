@@ -17,7 +17,7 @@ my-snowflake-db:
       private_key_passphrase: "{{ env_var('SNOWFLAKE_KEY_PASSPHRASE') }}"
 
       database: "{{ var('SNOWFLAKE_DATABASE', 'FIVETRAN_SALESFORCE') }}"
-      warehouse: "{{ var('SNOWFLAKE_WAREHOUSE', 'DEV_ETL_WH') }}"
+      warehouse: "{{ var('SNOWFLAKE_WAREHOUSE', 'ETLRESEARCH_SMALL_NCLFOLKS') }}"
       schema: DM
       threads: "{{ var('SNOWFLAKE_THREADS', 1) }}"
       client_session_keep_alive: False
