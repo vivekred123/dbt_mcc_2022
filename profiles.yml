@@ -18,7 +18,7 @@ my-snowflake-db:
 
       database: "{{ var('SNOWFLAKE_DATABASE', 'FIVETRAN_SALESFORCE') }}"
       warehouse: "{{ var('SNOWFLAKE_WAREHOUSE', 'ETLRESEARCH_SMALL_NCLFOLKS') }}"
-      schema: DM
+      schema: CRM_SALESFORCE
       threads: "{{ var('SNOWFLAKE_THREADS', 1) }}"
       client_session_keep_alive: False
 

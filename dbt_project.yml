@@ -33,7 +33,7 @@ models:
   my_new_project:
 
     FIVETRAN_SALESFORCE:
-        schema: FIVETRAN_SALESFORCE         
+        schema: CRM_SALESFORCE         
     
     
     
@@ -43,6 +43,6 @@ seeds:
   my_new_project:
     +quote_columns: false
     +enabled: true
-    +schema: FIVETRAN_SALESFORCE
+    +schema: CRM_SALESFORCE
     +full_refresh: false
     
