@@ -10,15 +10,11 @@ mcc-snowflake-db:
     dev:
       type: snowflake
       account: momentumcc.us-east-1
-
-      user: "{{ var('SNOWFLAKE_USERNAME', 'fivetran_vivek') }}"
-      # Keypair config
-      private_key_path: "{{ var('SNOWFLAKE_PRIVATE_KEY_PATH', '.keys/fivetran_vivek.p8') }}" 
-      private_key_passphrase: "{{ env_var('SNOWFLAKE_KEY_PASSPHRASE') }}"
-
-      database: "{{ var('SNOWFLAKE_DATABASE', 'FIVETRAN_SALESFORCE') }}"
-      warehouse: "{{ var('SNOWFLAKE_WAREHOUSE', 'ETLRESEARCH_SMALL_NCLFOLKS') }}"
+      user: sanjayk
+      password: Sanjay_92
+      role: FIVETRAN_ROLE
+      database: FIVETRAN_SALESFORCE
+      warehouse: ETLRESEARCH_SMALL_NCLFOLKS
       schema: CRM_SALESFORCE
-      threads: "{{ var('SNOWFLAKE_THREADS', 1) }}"
-      client_session_keep_alive: False
+      threads: 1
 
