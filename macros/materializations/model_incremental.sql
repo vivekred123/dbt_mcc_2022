@@ -96,7 +96,7 @@
         select {{ dest_cols_csv }}
         from {{source}}
       ) S 
-        on  S.ACCOUNT_CONTACT_ID=T.ACCOUNT_CONTACT_ID
+        on  {{csv_to_pairs("S", "T" , unique_key, ' and ') }}
         when matched
           then update set
               {{ pairs }}
